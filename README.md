@@ -37,9 +37,8 @@
 
 После клонирования репозитория можно добавить сюда скриншот, например `docs/screenshot.png`, и вставить:
 
-```markdown
-![TipTyp](docs/screenshot.png)
-```
+<img width="1918" height="909" alt="image" src="https://github.com/user-attachments/assets/7dee76c3-b5ce-4a45-a7c3-0ad41e878c81" />
+
 
 ---
 
@@ -295,3 +294,4 @@ tiptyp/
 Проект можно использовать и дорабатывать по своему усмотрению. Уточните лицензию в репозитории (например, MIT).
 
 с ❤️ от GoreWorste#
+
