@@ -1,0 +1,28 @@
+# Git и среда
+.git
+.gitignore
+.env
+.venv
+venv
+__pycache__
+*.pyc
+*.pyo
+.pytest_cache
+.mypy_cache
+
+# Локальные данные (в контейнере будет volume)
+*.db
+instance/
+tiptyp.db
+data/
+
+# IDE и прочее
+.idea
+.vscode
+*.md
+!README.md
+
+# Docker (не копировать в образ)
+Dockerfile
+docker-compose.yml
+.dockerignore

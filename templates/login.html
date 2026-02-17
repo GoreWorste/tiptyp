@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{% if lang == 'en' %}Login — TipTyp{% else %}Вход — TipTyp{% endif %}{% endblock %}
+{% block content %}
+<div class="auth-box">
+    <h1>{% if lang == 'en' %}Log in{% else %}Вход{% endif %}</h1>
+    <form method="post" class="auth-form">
+        <label for="username">{% if lang == 'en' %}Username{% else %}Логин{% endif %}</label>
+        <input type="text" id="username" name="username" required autofocus>
+        <label for="password">{% if lang == 'en' %}Password{% else %}Пароль{% endif %}</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">{% if lang == 'en' %}Log in{% else %}Войти{% endif %}</button>
+    </form>
+    <p class="auth-hint">{% if lang == 'en' %}No account? {% else %}Нет аккаунта? {% endif %}<a href="{{ url_for('register', lang=lang) }}">{% if lang == 'en' %}Register{% else %}Зарегистрироваться{% endif %}</a></p>
+</div>
+{% endblock %}

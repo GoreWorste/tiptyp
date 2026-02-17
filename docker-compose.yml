@@ -1,0 +1,21 @@
+# TipTyp — запуск в локальной сети
+# Использование: docker compose up -d
+# С этого ПК: http://localhost:5000  (или :8080, если 5000 занят — см. порт ниже)
+# С телефона: http://<IP-ПК>:5000 (или :8080)
+#
+# Если ошибка "port is already allocated": освободите порт или замените 5000 на 8080:
+#   ports: - "0.0.0.0:8080:5000"
+
+services:
+  tiptyp:
+    build: .
+    container_name: tiptyp
+    ports:
+      - "0.0.0.0:5000:5000"
+    environment:
+      - TIPTYP_DATA=/data
+      - SECRET_KEY=${SECRET_KEY:-tiptyp-local-secret}
+    volumes:
+      # Используем папку проекта — одна БД для запуска и локально, и в Docker
+      - .:/data
+    restart: unless-stopped

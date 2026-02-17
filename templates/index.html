@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}{% if lang == 'en' %}Typing test — TipTyp{% else %}Тест на скорость — TipTyp{% endif %}{% endblock %}
+{% block test_header %}
+<div class="test-header">
+    <span class="mode-label">{% if lang == 'en' %}Word Count:{% else %}Количество слов:{% endif %}</span>
+    <div class="word-counts">
+        <button type="button" class="word-count-btn" data-count="10">10</button>
+        <button type="button" class="word-count-btn active" data-count="25">25</button>
+        <button type="button" class="word-count-btn" data-count="50">50</button>
+        <button type="button" class="word-count-btn" data-count="100">100</button>
+    </div>
+    <div class="generator-wrap">
+        <span class="mode-label">{% if lang == 'en' %}Mode:{% else %}Режим:{% endif %}</span>
+        <select id="wordGenerator" title="{% if lang == 'en' %}Word source{% else %}Источник слов{% endif %}">
+            {% if lang == 'en' %}
+            <option value="words" selected>meaningful words</option>
+            <option value="model">our model</option>
+            <option value="syllable">syllables</option>
+            {% else %}
+            <option value="words" selected>осмысленные слова</option>
+            <option value="model">наша модель</option>
+            <option value="syllable">слоги</option>
+            {% endif %}
+        </select>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="typing-page">
+    <div class="typing-area">
+        <div class="typing-words-wrap">
+            <div class="typing-words" id="typingWords" aria-label="{% if lang == 'en' %}Text to type{% else %}Текст для набора{% endif %}">
+                <span class="loading-words">{% if lang == 'en' %}Loading words…{% else %}Загрузка слов…{% endif %}</span>
+            </div>
+            <textarea
+                class="typing-input"
+                id="typingInput"
+                rows="1"
+                autocomplete="off"
+                spellcheck="false"
+                aria-label="{% if lang == 'en' %}Type here{% else %}Ввод текста{% endif %}"
+            ></textarea>
+        </div>
+        <div class="typing-meta">
+            <span class="meta-item">{% if lang == 'en' %}time:{% else %}время:{% endif %} <strong id="timer">0:00</strong></span>
+            <span class="meta-item">{% if lang == 'en' %}wpm:{% else %}слов/мин:{% endif %} <strong id="wpm">0</strong></span>
+            <span class="meta-item">{% if lang == 'en' %}accuracy:{% else %}точность:{% endif %} <strong id="accuracy">—</strong></span>
+        </div>
+    </div>
+    <p class="restart-hint">
+        <span class="hint-desktop">{% if lang == 'en' %}<kbd>Tab</kbd> or <kbd>Ctrl</kbd>+<kbd>Enter</kbd> — restart{% else %}<kbd>Tab</kbd> или <kbd>Ctrl</kbd>+<kbd>Enter</kbd> — перезапуск{% endif %}</span>
+        <span class="hint-mobile">{% if lang == 'en' %}Tap the button below to restart{% else %}Нажмите кнопку ниже для перезапуска{% endif %}</span>
+        <button type="button" class="btn btn-secondary btn-restart-small" id="btnRestart" title="{% if lang == 'en' %}New test{% else %}Новый тест{% endif %}">↻ {% if lang == 'en' %}new test{% else %}новый тест{% endif %}</button>
+    </p>
+    <div class="result-inline" id="resultInline" hidden>
+        <h2 class="result-inline-title">{% if lang == 'en' %}Result{% else %}Результат{% endif %}</h2>
+        <div class="result-stats" id="resultStats"></div>
+        <div class="result-report" id="resultReport"></div>
+        <p class="result-save" id="resultSave"></p>
+        <button type="button" class="btn btn-primary" id="btnCloseResult">{% if lang == 'en' %}New test{% else %}Новый тест{% endif %}</button>
+    </div>
+</div>
+<script>window.TIPTOP_LANG = "{{ lang }}";</script>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+{% endblock %}

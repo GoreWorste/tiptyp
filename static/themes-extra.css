@@ -1,0 +1,1711 @@
+/* TipTyp — темы 6–50 (сгенерировано generate_themes.py) */
+
+[data-theme="dark6"] {
+    --bg: hsl(102, 12%, 16%);
+    --bg-sub: hsl(102, 10%, 20%);
+    --surface: hsl(102, 11%, 24%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(102, 55%, 51%);
+    --accent-dim: hsl(102, 55%, 39%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(102, 55%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark7"] {
+    --bg: hsl(239, 12%, 10%);
+    --bg-sub: hsl(239, 10%, 14%);
+    --surface: hsl(239, 11%, 18%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(239, 65%, 57%);
+    --accent-dim: hsl(239, 65%, 45%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(239, 65%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark8"] {
+    --bg: hsl(16, 12%, 11%);
+    --bg-sub: hsl(16, 10%, 15%);
+    --surface: hsl(16, 11%, 19%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(16, 75%, 63%);
+    --accent-dim: hsl(16, 75%, 51%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(16, 75%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark9"] {
+    --bg: hsl(153, 12%, 12%);
+    --bg-sub: hsl(153, 10%, 16%);
+    --surface: hsl(153, 11%, 20%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(153, 55%, 69%);
+    --accent-dim: hsl(153, 55%, 57%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(153, 55%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark10"] {
+    --bg: hsl(290, 12%, 13%);
+    --bg-sub: hsl(290, 10%, 17%);
+    --surface: hsl(290, 11%, 21%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(290, 65%, 45%);
+    --accent-dim: hsl(290, 65%, 33%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #fff;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(290, 65%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark11"] {
+    --bg: hsl(67, 12%, 14%);
+    --bg-sub: hsl(67, 10%, 18%);
+    --surface: hsl(67, 11%, 22%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(67, 75%, 51%);
+    --accent-dim: hsl(67, 75%, 39%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(67, 75%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark12"] {
+    --bg: hsl(204, 12%, 15%);
+    --bg-sub: hsl(204, 10%, 19%);
+    --surface: hsl(204, 11%, 23%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(204, 55%, 57%);
+    --accent-dim: hsl(204, 55%, 45%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(204, 55%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark13"] {
+    --bg: hsl(341, 12%, 16%);
+    --bg-sub: hsl(341, 10%, 20%);
+    --surface: hsl(341, 11%, 24%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(341, 65%, 63%);
+    --accent-dim: hsl(341, 65%, 51%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(341, 65%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark14"] {
+    --bg: hsl(118, 12%, 10%);
+    --bg-sub: hsl(118, 10%, 14%);
+    --surface: hsl(118, 11%, 18%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(118, 75%, 69%);
+    --accent-dim: hsl(118, 75%, 57%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(118, 75%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark15"] {
+    --bg: hsl(255, 12%, 11%);
+    --bg-sub: hsl(255, 10%, 15%);
+    --surface: hsl(255, 11%, 19%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(255, 55%, 45%);
+    --accent-dim: hsl(255, 55%, 33%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #fff;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(255, 55%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark16"] {
+    --bg: hsl(32, 12%, 12%);
+    --bg-sub: hsl(32, 10%, 16%);
+    --surface: hsl(32, 11%, 20%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(32, 65%, 51%);
+    --accent-dim: hsl(32, 65%, 39%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(32, 65%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark17"] {
+    --bg: hsl(169, 12%, 13%);
+    --bg-sub: hsl(169, 10%, 17%);
+    --surface: hsl(169, 11%, 21%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(169, 75%, 57%);
+    --accent-dim: hsl(169, 75%, 45%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(169, 75%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark18"] {
+    --bg: hsl(306, 12%, 14%);
+    --bg-sub: hsl(306, 10%, 18%);
+    --surface: hsl(306, 11%, 22%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(306, 55%, 63%);
+    --accent-dim: hsl(306, 55%, 51%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(306, 55%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark19"] {
+    --bg: hsl(83, 12%, 15%);
+    --bg-sub: hsl(83, 10%, 19%);
+    --surface: hsl(83, 11%, 23%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(83, 65%, 69%);
+    --accent-dim: hsl(83, 65%, 57%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(83, 65%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark20"] {
+    --bg: hsl(220, 12%, 16%);
+    --bg-sub: hsl(220, 10%, 20%);
+    --surface: hsl(220, 11%, 24%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(220, 75%, 45%);
+    --accent-dim: hsl(220, 75%, 33%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #fff;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(220, 75%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark21"] {
+    --bg: hsl(357, 12%, 10%);
+    --bg-sub: hsl(357, 10%, 14%);
+    --surface: hsl(357, 11%, 18%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(357, 55%, 51%);
+    --accent-dim: hsl(357, 55%, 39%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(357, 55%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark22"] {
+    --bg: hsl(134, 12%, 11%);
+    --bg-sub: hsl(134, 10%, 15%);
+    --surface: hsl(134, 11%, 19%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(134, 65%, 57%);
+    --accent-dim: hsl(134, 65%, 45%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(134, 65%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark23"] {
+    --bg: hsl(271, 12%, 12%);
+    --bg-sub: hsl(271, 10%, 16%);
+    --surface: hsl(271, 11%, 20%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(271, 75%, 63%);
+    --accent-dim: hsl(271, 75%, 51%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(271, 75%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark24"] {
+    --bg: hsl(48, 12%, 13%);
+    --bg-sub: hsl(48, 10%, 17%);
+    --surface: hsl(48, 11%, 21%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(48, 55%, 69%);
+    --accent-dim: hsl(48, 55%, 57%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(48, 55%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark25"] {
+    --bg: hsl(185, 12%, 14%);
+    --bg-sub: hsl(185, 10%, 18%);
+    --surface: hsl(185, 11%, 22%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(185, 65%, 45%);
+    --accent-dim: hsl(185, 65%, 33%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #fff;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(185, 65%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark26"] {
+    --bg: hsl(322, 12%, 15%);
+    --bg-sub: hsl(322, 10%, 19%);
+    --surface: hsl(322, 11%, 23%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(322, 75%, 51%);
+    --accent-dim: hsl(322, 75%, 39%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(322, 75%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark27"] {
+    --bg: hsl(99, 12%, 16%);
+    --bg-sub: hsl(99, 10%, 20%);
+    --surface: hsl(99, 11%, 24%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(99, 55%, 57%);
+    --accent-dim: hsl(99, 55%, 45%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(99, 55%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark28"] {
+    --bg: hsl(236, 12%, 10%);
+    --bg-sub: hsl(236, 10%, 14%);
+    --surface: hsl(236, 11%, 18%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(236, 65%, 63%);
+    --accent-dim: hsl(236, 65%, 51%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(236, 65%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark29"] {
+    --bg: hsl(13, 12%, 11%);
+    --bg-sub: hsl(13, 10%, 15%);
+    --surface: hsl(13, 11%, 19%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(13, 75%, 69%);
+    --accent-dim: hsl(13, 75%, 57%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(13, 75%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark30"] {
+    --bg: hsl(150, 12%, 12%);
+    --bg-sub: hsl(150, 10%, 16%);
+    --surface: hsl(150, 11%, 20%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(150, 55%, 45%);
+    --accent-dim: hsl(150, 55%, 33%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #fff;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(150, 55%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark31"] {
+    --bg: hsl(287, 12%, 13%);
+    --bg-sub: hsl(287, 10%, 17%);
+    --surface: hsl(287, 11%, 21%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(287, 65%, 51%);
+    --accent-dim: hsl(287, 65%, 39%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(287, 65%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark32"] {
+    --bg: hsl(64, 12%, 14%);
+    --bg-sub: hsl(64, 10%, 18%);
+    --surface: hsl(64, 11%, 22%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(64, 75%, 57%);
+    --accent-dim: hsl(64, 75%, 45%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(64, 75%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark33"] {
+    --bg: hsl(201, 12%, 15%);
+    --bg-sub: hsl(201, 10%, 19%);
+    --surface: hsl(201, 11%, 23%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(201, 55%, 63%);
+    --accent-dim: hsl(201, 55%, 51%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(201, 55%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark34"] {
+    --bg: hsl(338, 12%, 16%);
+    --bg-sub: hsl(338, 10%, 20%);
+    --surface: hsl(338, 11%, 24%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(338, 65%, 69%);
+    --accent-dim: hsl(338, 65%, 57%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(338, 65%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark35"] {
+    --bg: hsl(115, 12%, 10%);
+    --bg-sub: hsl(115, 10%, 14%);
+    --surface: hsl(115, 11%, 18%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(115, 75%, 45%);
+    --accent-dim: hsl(115, 75%, 33%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #fff;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(115, 75%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark36"] {
+    --bg: hsl(252, 12%, 11%);
+    --bg-sub: hsl(252, 10%, 15%);
+    --surface: hsl(252, 11%, 19%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(252, 55%, 51%);
+    --accent-dim: hsl(252, 55%, 39%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(252, 55%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark37"] {
+    --bg: hsl(29, 12%, 12%);
+    --bg-sub: hsl(29, 10%, 16%);
+    --surface: hsl(29, 11%, 20%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(29, 65%, 57%);
+    --accent-dim: hsl(29, 65%, 45%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(29, 65%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark38"] {
+    --bg: hsl(166, 12%, 13%);
+    --bg-sub: hsl(166, 10%, 17%);
+    --surface: hsl(166, 11%, 21%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(166, 75%, 63%);
+    --accent-dim: hsl(166, 75%, 51%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(166, 75%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark39"] {
+    --bg: hsl(303, 12%, 14%);
+    --bg-sub: hsl(303, 10%, 18%);
+    --surface: hsl(303, 11%, 22%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(303, 55%, 69%);
+    --accent-dim: hsl(303, 55%, 57%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(303, 55%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark40"] {
+    --bg: hsl(80, 12%, 15%);
+    --bg-sub: hsl(80, 10%, 19%);
+    --surface: hsl(80, 11%, 23%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(80, 65%, 45%);
+    --accent-dim: hsl(80, 65%, 33%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #fff;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(80, 65%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark41"] {
+    --bg: hsl(217, 12%, 16%);
+    --bg-sub: hsl(217, 10%, 20%);
+    --surface: hsl(217, 11%, 24%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(217, 75%, 51%);
+    --accent-dim: hsl(217, 75%, 39%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(217, 75%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark42"] {
+    --bg: hsl(354, 12%, 10%);
+    --bg-sub: hsl(354, 10%, 14%);
+    --surface: hsl(354, 11%, 18%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(354, 55%, 57%);
+    --accent-dim: hsl(354, 55%, 45%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(354, 55%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark43"] {
+    --bg: hsl(131, 12%, 11%);
+    --bg-sub: hsl(131, 10%, 15%);
+    --surface: hsl(131, 11%, 19%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(131, 65%, 63%);
+    --accent-dim: hsl(131, 65%, 51%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(131, 65%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark44"] {
+    --bg: hsl(268, 12%, 12%);
+    --bg-sub: hsl(268, 10%, 16%);
+    --surface: hsl(268, 11%, 20%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(268, 75%, 69%);
+    --accent-dim: hsl(268, 75%, 57%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(268, 75%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark45"] {
+    --bg: hsl(45, 12%, 13%);
+    --bg-sub: hsl(45, 10%, 17%);
+    --surface: hsl(45, 11%, 21%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(45, 55%, 45%);
+    --accent-dim: hsl(45, 55%, 33%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #fff;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(45, 55%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark46"] {
+    --bg: hsl(182, 12%, 14%);
+    --bg-sub: hsl(182, 10%, 18%);
+    --surface: hsl(182, 11%, 22%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(182, 65%, 51%);
+    --accent-dim: hsl(182, 65%, 39%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(182, 65%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark47"] {
+    --bg: hsl(319, 12%, 15%);
+    --bg-sub: hsl(319, 10%, 19%);
+    --surface: hsl(319, 11%, 23%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(319, 75%, 57%);
+    --accent-dim: hsl(319, 75%, 45%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(319, 75%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark48"] {
+    --bg: hsl(96, 12%, 16%);
+    --bg-sub: hsl(96, 10%, 20%);
+    --surface: hsl(96, 11%, 24%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(96, 55%, 63%);
+    --accent-dim: hsl(96, 55%, 51%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(96, 55%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark49"] {
+    --bg: hsl(233, 12%, 10%);
+    --bg-sub: hsl(233, 10%, 14%);
+    --surface: hsl(233, 11%, 18%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(233, 65%, 69%);
+    --accent-dim: hsl(233, 65%, 57%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #1a1a1a;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(233, 65%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark50"] {
+    --bg: hsl(10, 12%, 11%);
+    --bg-sub: hsl(10, 10%, 15%);
+    --surface: hsl(10, 11%, 19%);
+    --text: hsl(0, 0%, 88%);
+    --text-muted: hsl(0, 0%, 58%);
+    --accent: hsl(10, 75%, 45%);
+    --accent-dim: hsl(10, 75%, 33%);
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --on-accent: #fff;
+    --success-bg: rgba(46, 204, 113, 0.2);
+    --error-bg: rgba(231, 76, 60, 0.2);
+    --success-bg-dim: rgba(46, 204, 113, 0.12);
+    --accent-bg-dim: hsl(10, 75%, 20%);
+    --overlay: rgba(0, 0, 0, 0.75);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="light6"] {
+    --bg: hsl(0, 0%, 95%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 87%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(282, 74%, 48%);
+    --accent-dim: hsl(282, 74%, 38%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(282, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light7"] {
+    --bg: hsl(0, 0%, 94%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 86%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(59, 86%, 53%);
+    --accent-dim: hsl(59, 86%, 43%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(59, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light8"] {
+    --bg: hsl(0, 0%, 93%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 85%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(196, 50%, 38%);
+    --accent-dim: hsl(196, 50%, 28%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(196, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light9"] {
+    --bg: hsl(0, 0%, 92%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 84%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(333, 62%, 43%);
+    --accent-dim: hsl(333, 62%, 33%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(333, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light10"] {
+    --bg: hsl(0, 0%, 96%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 88%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(110, 74%, 48%);
+    --accent-dim: hsl(110, 74%, 38%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(110, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light11"] {
+    --bg: hsl(0, 0%, 95%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 87%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(247, 86%, 53%);
+    --accent-dim: hsl(247, 86%, 43%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(247, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light12"] {
+    --bg: hsl(0, 0%, 94%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 86%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(24, 50%, 38%);
+    --accent-dim: hsl(24, 50%, 28%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(24, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light13"] {
+    --bg: hsl(0, 0%, 93%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 85%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(161, 62%, 43%);
+    --accent-dim: hsl(161, 62%, 33%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(161, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light14"] {
+    --bg: hsl(0, 0%, 92%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 84%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(298, 74%, 48%);
+    --accent-dim: hsl(298, 74%, 38%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(298, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light15"] {
+    --bg: hsl(0, 0%, 96%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 88%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(75, 86%, 53%);
+    --accent-dim: hsl(75, 86%, 43%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(75, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light16"] {
+    --bg: hsl(0, 0%, 95%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 87%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(212, 50%, 38%);
+    --accent-dim: hsl(212, 50%, 28%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(212, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light17"] {
+    --bg: hsl(0, 0%, 94%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 86%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(349, 62%, 43%);
+    --accent-dim: hsl(349, 62%, 33%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(349, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light18"] {
+    --bg: hsl(0, 0%, 93%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 85%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(126, 74%, 48%);
+    --accent-dim: hsl(126, 74%, 38%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(126, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light19"] {
+    --bg: hsl(0, 0%, 92%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 84%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(263, 86%, 53%);
+    --accent-dim: hsl(263, 86%, 43%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(263, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light20"] {
+    --bg: hsl(0, 0%, 96%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 88%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(40, 50%, 38%);
+    --accent-dim: hsl(40, 50%, 28%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(40, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light21"] {
+    --bg: hsl(0, 0%, 95%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 87%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(177, 62%, 43%);
+    --accent-dim: hsl(177, 62%, 33%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(177, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light22"] {
+    --bg: hsl(0, 0%, 94%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 86%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(314, 74%, 48%);
+    --accent-dim: hsl(314, 74%, 38%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(314, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light23"] {
+    --bg: hsl(0, 0%, 93%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 85%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(91, 86%, 53%);
+    --accent-dim: hsl(91, 86%, 43%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(91, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light24"] {
+    --bg: hsl(0, 0%, 92%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 84%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(228, 50%, 38%);
+    --accent-dim: hsl(228, 50%, 28%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(228, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light25"] {
+    --bg: hsl(0, 0%, 96%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 88%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(5, 62%, 43%);
+    --accent-dim: hsl(5, 62%, 33%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(5, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light26"] {
+    --bg: hsl(0, 0%, 95%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 87%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(142, 74%, 48%);
+    --accent-dim: hsl(142, 74%, 38%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(142, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light27"] {
+    --bg: hsl(0, 0%, 94%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 86%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(279, 86%, 53%);
+    --accent-dim: hsl(279, 86%, 43%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(279, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light28"] {
+    --bg: hsl(0, 0%, 93%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 85%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(56, 50%, 38%);
+    --accent-dim: hsl(56, 50%, 28%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(56, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light29"] {
+    --bg: hsl(0, 0%, 92%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 84%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(193, 62%, 43%);
+    --accent-dim: hsl(193, 62%, 33%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(193, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light30"] {
+    --bg: hsl(0, 0%, 96%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 88%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(330, 74%, 48%);
+    --accent-dim: hsl(330, 74%, 38%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(330, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light31"] {
+    --bg: hsl(0, 0%, 95%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 87%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(107, 86%, 53%);
+    --accent-dim: hsl(107, 86%, 43%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(107, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light32"] {
+    --bg: hsl(0, 0%, 94%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 86%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(244, 50%, 38%);
+    --accent-dim: hsl(244, 50%, 28%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(244, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light33"] {
+    --bg: hsl(0, 0%, 93%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 85%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(21, 62%, 43%);
+    --accent-dim: hsl(21, 62%, 33%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(21, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light34"] {
+    --bg: hsl(0, 0%, 92%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 84%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(158, 74%, 48%);
+    --accent-dim: hsl(158, 74%, 38%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(158, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light35"] {
+    --bg: hsl(0, 0%, 96%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 88%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(295, 86%, 53%);
+    --accent-dim: hsl(295, 86%, 43%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(295, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light36"] {
+    --bg: hsl(0, 0%, 95%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 87%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(72, 50%, 38%);
+    --accent-dim: hsl(72, 50%, 28%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(72, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light37"] {
+    --bg: hsl(0, 0%, 94%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 86%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(209, 62%, 43%);
+    --accent-dim: hsl(209, 62%, 33%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(209, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light38"] {
+    --bg: hsl(0, 0%, 93%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 85%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(346, 74%, 48%);
+    --accent-dim: hsl(346, 74%, 38%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(346, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light39"] {
+    --bg: hsl(0, 0%, 92%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 84%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(123, 86%, 53%);
+    --accent-dim: hsl(123, 86%, 43%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(123, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light40"] {
+    --bg: hsl(0, 0%, 96%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 88%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(260, 50%, 38%);
+    --accent-dim: hsl(260, 50%, 28%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(260, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light41"] {
+    --bg: hsl(0, 0%, 95%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 87%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(37, 62%, 43%);
+    --accent-dim: hsl(37, 62%, 33%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(37, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light42"] {
+    --bg: hsl(0, 0%, 94%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 86%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(174, 74%, 48%);
+    --accent-dim: hsl(174, 74%, 38%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(174, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light43"] {
+    --bg: hsl(0, 0%, 93%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 85%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(311, 86%, 53%);
+    --accent-dim: hsl(311, 86%, 43%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(311, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light44"] {
+    --bg: hsl(0, 0%, 92%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 84%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(88, 50%, 38%);
+    --accent-dim: hsl(88, 50%, 28%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(88, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light45"] {
+    --bg: hsl(0, 0%, 96%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 88%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(225, 62%, 43%);
+    --accent-dim: hsl(225, 62%, 33%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(225, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light46"] {
+    --bg: hsl(0, 0%, 95%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 87%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(2, 74%, 48%);
+    --accent-dim: hsl(2, 74%, 38%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(2, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light47"] {
+    --bg: hsl(0, 0%, 94%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 86%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(139, 86%, 53%);
+    --accent-dim: hsl(139, 86%, 43%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(139, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light48"] {
+    --bg: hsl(0, 0%, 93%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 85%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(276, 50%, 38%);
+    --accent-dim: hsl(276, 50%, 28%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(276, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light49"] {
+    --bg: hsl(0, 0%, 92%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 84%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(53, 62%, 43%);
+    --accent-dim: hsl(53, 62%, 33%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(53, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light50"] {
+    --bg: hsl(0, 0%, 96%);
+    --bg-sub: #ffffff;
+    --surface: hsl(0, 0%, 88%);
+    --text: hsl(0, 0%, 18%);
+    --text-muted: hsl(0, 0%, 45%);
+    --accent: hsl(190, 74%, 48%);
+    --accent-dim: hsl(190, 74%, 38%);
+    --success: #27ae60;
+    --error: #c0392b;
+    --on-accent: #fff;
+    --success-bg: rgba(39, 174, 96, 0.15);
+    --error-bg: rgba(192, 57, 43, 0.15);
+    --success-bg-dim: rgba(39, 174, 96, 0.1);
+    --accent-bg-dim: hsl(190, 70%, 92%);
+    --overlay: rgba(0, 0, 0, 0.45);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}

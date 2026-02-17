@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% if lang == 'en' %}TipTyp — typing test{% else %}TipTyp — набор на скорость{% endif %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='themes-extra.css') }}">
+</head>
+<body data-lang="{{ lang }}">
+    <nav class="navbar" id="navbar">
+        <a href="{{ url_for('index', lang=lang) }}" class="logo">TipTyp</a>
+        <button type="button" class="nav-burger" id="navBurger" aria-label="{% if lang == 'en' %}Menu{% else %}Меню{% endif %}" aria-expanded="false">
+            <span class="nav-burger-line"></span>
+            <span class="nav-burger-line"></span>
+            <span class="nav-burger-line"></span>
+        </button>
+        <div class="nav-links" id="navLinks">
+            <a href="{{ url_for('index', lang=lang) }}">{% if lang == 'en' %}Test{% else %}Тест{% endif %}</a>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('stats', lang=lang) }}">{% if lang == 'en' %}My stats{% else %}Моя статистика{% endif %}</a>
+                <a href="{{ url_for('logout', lang=lang) }}">{% if lang == 'en' %}Logout{% else %}Выйти{% endif %} ({{ current_user.username }})</a>
+            {% else %}
+                <a href="{{ url_for('login', lang=lang) }}">{% if lang == 'en' %}Login{% else %}Войти{% endif %}</a>
+                <a href="{{ url_for('register', lang=lang) }}">{% if lang == 'en' %}Register{% else %}Регистрация{% endif %}</a>
+            {% endif %}
+            <a href="{{ url_for('themes', lang=lang) }}" class="nav-link-themes">{% if lang == 'en' %}Themes{% else %}Темы{% endif %}</a>
+            <span class="lang-switch">
+                <a href="{{ url_lang_ru }}" class="{% if lang == 'ru' %}active{% endif %}">RU</a>
+                <a href="{{ url_lang_en }}" class="{% if lang == 'en' %}active{% endif %}">EN</a>
+            </span>
+        </div>
+    </nav>
+    <main class="main">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for category, msg in messages %}
+                        <li class="flash {{ category }}">{{ msg }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        {% block test_header %}{% endblock %}
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="footer">
+        {% block footer %}
+        <span class="footer-hint-desktop">{% if lang == 'en' %}<kbd>Tab</kbd> or <kbd>Ctrl</kbd>+<kbd>Enter</kbd> — restart test{% else %}<kbd>Tab</kbd> или <kbd>Ctrl</kbd>+<kbd>Enter</kbd> — перезапуск теста{% endif %}</span>
+        <span class="footer-hint-mobile">{% if lang == 'en' %}Tap «New test» to restart{% else %}Нажмите «Новый тест» для перезапуска{% endif %}</span>
+        {% endblock %}
+    </footer>
+    <script>
+(function() {
+    var STORAGE_KEY = 'tiptyp_theme';
+    var DEFAULT_THEME = 'dark1';
+    function getStoredTheme() {
+        try { return localStorage.getItem(STORAGE_KEY) || DEFAULT_THEME; } catch (e) { return DEFAULT_THEME; }
+    }
+    document.body.dataset.theme = getStoredTheme();
+    document.addEventListener('DOMContentLoaded', function() {
+        var burger = document.getElementById('navBurger');
+        var links = document.getElementById('navLinks');
+        var navbar = document.getElementById('navbar');
+        if (burger && links) {
+            burger.addEventListener('click', function() {
+                navbar.classList.toggle('nav-open');
+                burger.setAttribute('aria-expanded', navbar.classList.contains('nav-open'));
+            });
+            document.addEventListener('click', function(e) {
+                if (navbar.classList.contains('nav-open') && !navbar.contains(e.target)) {
+                    navbar.classList.remove('nav-open');
+                    burger.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+    });
+})();
+</script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

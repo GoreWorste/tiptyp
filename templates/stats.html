@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}{% if lang == 'en' %}My statistics — TipTyp{% else %}Моя статистика — TipTyp{% endif %}{% endblock %}
+{% block content %}
+<div class="stats-page">
+    <h1>{% if lang == 'en' %}My statistics{% else %}Моя статистика{% endif %}</h1>
+    <div class="stats-summary" id="statsSummary">
+        <p>{% if lang == 'en' %}Loading…{% else %}Загрузка…{% endif %}</p>
+    </div>
+    <div class="stats-table-wrap">
+        <table class="stats-table" id="statsTable">
+            <thead>
+                <tr>
+                    <th>{% if lang == 'en' %}Date{% else %}Дата{% endif %}</th>
+                    <th>{% if lang == 'en' %}WPM{% else %}Слов/мин{% endif %}</th>
+                    <th>{% if lang == 'en' %}Accuracy %{% else %}Точность %{% endif %}</th>
+                    <th>{% if lang == 'en' %}Time{% else %}Время{% endif %}</th>
+                </tr>
+            </thead>
+            <tbody id="statsBody"></tbody>
+        </table>
+    </div>
+</div>
+<script>window.TIPTOP_LANG = "{{ lang }}";</script>
+<script src="{{ url_for('static', filename='stats.js') }}"></script>
+{% endblock %}
