@@ -10,8 +10,59 @@
     var resultReport = document.getElementById('resultReport');
     var resultSave = document.getElementById('resultSave');
     var btnCloseResult = document.getElementById('btnCloseResult');
+    var visualKeyboard = document.getElementById('visualKeyboard');
 
     var words = [];
+
+    var KEYBOARD_ROWS = [
+        ['Backquote', 'Digit1', 'Digit2', 'Digit3', 'Digit4', 'Digit5', 'Digit6', 'Digit7', 'Digit8', 'Digit9', 'Digit0', 'Minus', 'Equal'],
+        ['KeyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT', 'KeyY', 'KeyU', 'KeyI', 'KeyO', 'KeyP', 'BracketLeft', 'BracketRight'],
+        ['KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyK', 'KeyL', 'Semicolon', 'Quote'],
+        ['KeyZ', 'KeyX', 'KeyC', 'KeyV', 'KeyB', 'KeyN', 'KeyM', 'Comma', 'Period', 'Slash'],
+        ['Space']
+    ];
+    var LAYOUT_EN = {
+        Backquote: '`', Digit1: '1', Digit2: '2', Digit3: '3', Digit4: '4', Digit5: '5', Digit6: '6', Digit7: '7', Digit8: '8', Digit9: '9', Digit0: '0', Minus: '-', Equal: '=',
+        KeyQ: 'q', KeyW: 'w', KeyE: 'e', KeyR: 'r', KeyT: 't', KeyY: 'y', KeyU: 'u', KeyI: 'i', KeyO: 'o', KeyP: 'p', BracketLeft: '[', BracketRight: ']',
+        KeyA: 'a', KeyS: 's', KeyD: 'd', KeyF: 'f', KeyG: 'g', KeyH: 'h', KeyJ: 'j', KeyK: 'k', KeyL: 'l', Semicolon: ';', Quote: "'",
+        KeyZ: 'z', KeyX: 'x', KeyC: 'c', KeyV: 'v', KeyB: 'b', KeyN: 'n', KeyM: 'm', Comma: ',', Period: '.', Slash: '/',
+        Space: ' '
+    };
+    var LAYOUT_RU = {
+        Backquote: 'ё', Digit1: '1', Digit2: '2', Digit3: '3', Digit4: '4', Digit5: '5', Digit6: '6', Digit7: '7', Digit8: '8', Digit9: '9', Digit0: '0', Minus: '-', Equal: '=',
+        KeyQ: 'й', KeyW: 'ц', KeyE: 'у', KeyR: 'к', KeyT: 'е', KeyY: 'н', KeyU: 'г', KeyI: 'ш', KeyO: 'щ', KeyP: 'з', BracketLeft: 'х', BracketRight: 'ъ',
+        KeyA: 'ф', KeyS: 'ы', KeyD: 'в', KeyF: 'а', KeyG: 'п', KeyH: 'р', KeyJ: 'о', KeyK: 'л', KeyL: 'д', Semicolon: 'ж', Quote: 'э',
+        KeyZ: 'я', KeyX: 'ч', KeyC: 'с', KeyV: 'м', KeyB: 'и', KeyN: 'т', KeyM: 'ь', Comma: 'б', Period: 'ю', Slash: '.',
+        Space: ' '
+    };
+
+    function buildVisualKeyboard() {
+        if (!visualKeyboard) return;
+        var lang = getLang();
+        var layout = lang === 'en' ? LAYOUT_EN : LAYOUT_RU;
+        visualKeyboard.innerHTML = '';
+        KEYBOARD_ROWS.forEach(function (rowCodes) {
+            var row = document.createElement('div');
+            row.className = 'keyboard-row';
+            rowCodes.forEach(function (code) {
+                var key = document.createElement('span');
+                key.className = 'key' + (code === 'Space' ? ' key-space' : '');
+                key.setAttribute('data-code', code);
+                key.textContent = code === 'Space' ? (lang === 'en' ? 'Space' : 'Пробел') : (layout[code] || code);
+                row.appendChild(key);
+            });
+            visualKeyboard.appendChild(row);
+        });
+    }
+
+    function highlightKey(code, pressed) {
+        if (!visualKeyboard) return;
+        var key = visualKeyboard.querySelector('.key[data-code="' + code + '"]');
+        if (key) {
+            if (pressed) key.classList.add('key-pressed');
+            else key.classList.remove('key-pressed');
+        }
+    }
     var startTime = null;
     var timerInterval = null;
     var totalChars = 0;
@@ -339,6 +390,11 @@
             e.preventDefault();
             return;
         }
+        highlightKey(e.code, true);
+    });
+
+    typingInput.addEventListener('keyup', function (e) {
+        highlightKey(e.code, false);
     });
 
     document.addEventListener('keydown', function (e) {
@@ -351,6 +407,10 @@
             e.preventDefault();
             resetTest();
         }
+    });
+
+    document.addEventListener('keyup', function (e) {
+        highlightKey(e.code, false);
     });
 
     document.querySelectorAll('.word-count-btn').forEach(function (btn) {
@@ -371,6 +431,7 @@
 
     if (btnCloseResult) btnCloseResult.addEventListener('click', resetTest);
 
+    buildVisualKeyboard();
     renderWords(function () {
         typingInput.focus();
     });

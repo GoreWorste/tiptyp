@@ -3,6 +3,11 @@
 # С этого ПК: http://localhost:5000  (или :8080, если 5000 занят — см. порт ниже)
 # С телефона: http://<IP-ПК>:5000 (или :8080)
 #
+# Код приложения монтируется в /app — после обновления файлов перезапустите:
+#   docker compose restart
+# Пересборка образа нужна только при изменении requirements.txt или Dockerfile:
+#   docker compose up -d --build
+#
 # Если ошибка "port is already allocated": освободите порт или замените 5000 на 8080:
 #   ports: - "0.0.0.0:8080:5000"
 
@@ -16,6 +21,8 @@ services:
       - TIPTYP_DATA=/data
       - SECRET_KEY=${SECRET_KEY:-tiptyp-local-secret}
     volumes:
-      # Используем папку проекта — одна БД для запуска и локально, и в Docker
+      # Папка проекта для БД и instance (словарь, модели)
       - .:/data
+      # Код приложения — обновления на хосте видны после restart без пересборки
+      - .:/app:ro
     restart: unless-stopped

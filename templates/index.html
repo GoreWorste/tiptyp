@@ -46,6 +46,9 @@
             <span class="meta-item">{% if lang == 'en' %}wpm:{% else %}слов/мин:{% endif %} <strong id="wpm">0</strong></span>
             <span class="meta-item">{% if lang == 'en' %}accuracy:{% else %}точность:{% endif %} <strong id="accuracy">—</strong></span>
         </div>
+        <div class="visual-keyboard-wrap" aria-hidden="true">
+            <div class="visual-keyboard" id="visualKeyboard" role="presentation"></div>
+        </div>
     </div>
     <p class="restart-hint">
         <span class="hint-desktop">{% if lang == 'en' %}<kbd>Tab</kbd> or <kbd>Ctrl</kbd>+<kbd>Enter</kbd> — restart{% else %}<kbd>Tab</kbd> или <kbd>Ctrl</kbd>+<kbd>Enter</kbd> — перезапуск{% endif %}</span>
