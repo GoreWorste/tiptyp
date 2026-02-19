@@ -132,8 +132,8 @@ def generate_syllable_words(count=45, min_syllables=2, max_syllables=4, lang='ru
 
 
 def generate_words(count=45, generator='words', lang='ru'):
-    """Единая точка входа. lang: 'ru' | 'en'."""
-    count = max(10, min(100, int(count)))
+    """Единая точка входа. lang: 'ru' | 'en'. count: 1–10000."""
+    count = max(1, min(10000, int(count)))
     if generator == 'words':
         return generate_real_words(count, lang)
     if generator == 'model':

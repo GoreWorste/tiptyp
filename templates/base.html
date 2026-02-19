@@ -2,32 +2,43 @@
 <html lang="{{ lang }}">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>{% block title %}{% if lang == 'en' %}TipTyp — typing test{% else %}TipTyp — набор на скорость{% endif %}{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='themes-extra.css') }}">
+    <script>
+    (function(){
+        var n = localStorage.getItem('tiptyp_font');
+        if (n) {
+            var fam = encodeURIComponent(n).replace(/%20/g, '+');
+            var l = document.createElement('link');
+            l.id = 'tiptyp-google-font-link';
+            l.rel = 'stylesheet';
+            l.href = 'https://fonts.googleapis.com/css2?family=' + fam + '&display=swap';
+            document.head.appendChild(l);
+        }
+    })();
+    </script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v={{ static_version|default('0') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='themes-extra.css') }}?v={{ static_version|default('0') }}">
 </head>
 <body data-lang="{{ lang }}">
     <nav class="navbar" id="navbar">
-        <a href="{{ url_for('index', lang=lang) }}" class="logo">TipTyp</a>
+        <a href="{{ url_for('index', lang=lang) }}" class="logo" data-soft-nav>TipTyp</a>
         <button type="button" class="nav-burger" id="navBurger" aria-label="{% if lang == 'en' %}Menu{% else %}Меню{% endif %}" aria-expanded="false">
             <span class="nav-burger-line"></span>
             <span class="nav-burger-line"></span>
             <span class="nav-burger-line"></span>
         </button>
         <div class="nav-links" id="navLinks">
-            <a href="{{ url_for('index', lang=lang) }}">{% if lang == 'en' %}Test{% else %}Тест{% endif %}</a>
+            <a href="{{ url_for('index', lang=lang) }}" data-soft-nav>{% if lang == 'en' %}Test{% else %}Тест{% endif %}</a>
             {% if current_user.is_authenticated %}
-                <a href="{{ url_for('stats', lang=lang) }}">{% if lang == 'en' %}My stats{% else %}Моя статистика{% endif %}</a>
-                <a href="{{ url_for('logout', lang=lang) }}">{% if lang == 'en' %}Logout{% else %}Выйти{% endif %} ({{ current_user.username }})</a>
+                <a href="{{ url_for('profile', lang=lang) }}" data-soft-nav>{% if lang == 'en' %}Profile{% else %}Профиль{% endif %}</a>
             {% else %}
-                <a href="{{ url_for('login', lang=lang) }}">{% if lang == 'en' %}Login{% else %}Войти{% endif %}</a>
-                <a href="{{ url_for('register', lang=lang) }}">{% if lang == 'en' %}Register{% else %}Регистрация{% endif %}</a>
+                <a href="{{ url_for('login', lang=lang) }}" data-soft-nav>{% if lang == 'en' %}Login{% else %}Войти{% endif %}</a>
+                <a href="{{ url_for('register', lang=lang) }}" data-soft-nav>{% if lang == 'en' %}Register{% else %}Регистрация{% endif %}</a>
             {% endif %}
-            <a href="{{ url_for('themes', lang=lang) }}" class="nav-link-themes">{% if lang == 'en' %}Themes{% else %}Темы{% endif %}</a>
             <span class="lang-switch">
-                <a href="{{ url_lang_ru }}" class="{% if lang == 'ru' %}active{% endif %}">RU</a>
-                <a href="{{ url_lang_en }}" class="{% if lang == 'en' %}active{% endif %}">EN</a>
+                <a href="{{ url_lang_ru }}" class="{% if lang == 'ru' %}active{% endif %}" data-soft-nav>RU</a>
+                <a href="{{ url_lang_en }}" class="{% if lang == 'en' %}active{% endif %}" data-soft-nav>EN</a>
             </span>
         </div>
     </nav>
@@ -48,6 +59,7 @@
         {% block footer %}
         <span class="footer-hint-desktop">{% if lang == 'en' %}<kbd>Tab</kbd> or <kbd>Ctrl</kbd>+<kbd>Enter</kbd> — restart test{% else %}<kbd>Tab</kbd> или <kbd>Ctrl</kbd>+<kbd>Enter</kbd> — перезапуск теста{% endif %}</span>
         <span class="footer-hint-mobile">{% if lang == 'en' %}Tap «New test» to restart{% else %}Нажмите «Новый тест» для перезапуска{% endif %}</span>
+        {% if build_id and build_id != 'dev' %}<span class="footer-build" title="Build ID — если видишь новое значение после деплоя, сервер отдаёт новый код"> · {{ build_id }}</span>{% endif %}
         {% endblock %}
     </footer>
     <script>
@@ -74,6 +86,99 @@
                 }
             });
         }
+    });
+})();
+</script>
+<script>
+(function() {
+    var FONT_LINK_ID = 'tiptyp-google-font-link';
+    function applyCustomFont() {
+        try {
+            var name = localStorage.getItem('tiptyp_font');
+            var link = document.getElementById(FONT_LINK_ID);
+            if (!name) {
+                document.documentElement.removeAttribute('data-custom-font');
+                document.documentElement.style.removeProperty('--custom-font-family');
+                if (link) link.remove();
+                return;
+            }
+            var quoted = "'" + name.replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "'";
+            var fontValue = quoted + ', sans-serif';
+            document.documentElement.setAttribute('data-custom-font', name);
+            document.documentElement.style.setProperty('--custom-font-family', fontValue);
+            var fam = encodeURIComponent(name).replace(/%20/g, '+');
+            if (!link) {
+                link = document.createElement('link');
+                link.id = FONT_LINK_ID;
+                link.rel = 'stylesheet';
+                document.head.appendChild(link);
+            }
+            link.href = 'https://fonts.googleapis.com/css2?family=' + fam + '&display=swap';
+        } catch (e) {}
+    }
+    applyCustomFont();
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', applyCustomFont);
+    }
+    window.applyTipTypFont = applyCustomFont;
+})();
+</script>
+<script>
+(function() {
+    function getLink(el) {
+        if (!el) return null;
+        if (el.tagName === 'A') return el;
+        return el.closest ? el.closest('a') : null;
+    }
+    function isSoftNavLink(link) {
+        return link && link.hasAttribute && link.hasAttribute('data-soft-nav') && link.href && !link.target && link.hostname === location.hostname;
+    }
+    function loadPage(url, pushState) {
+        fetch(url, { credentials: 'same-origin', headers: { 'X-Requested-With': 'XMLHttpRequest' } })
+            .then(function(r) {
+                if (!r.ok) throw new Error(r.status);
+                return r.text();
+            })
+            .then(function(html) {
+                var parser = new DOMParser();
+                var doc = parser.parseFromString(html, 'text/html');
+                var newBody = doc.body;
+                if (!newBody) return;
+                document.title = doc.title || document.title;
+                var i, attrs = newBody.attributes;
+                for (i = 0; i < attrs.length; i++) {
+                    document.body.setAttribute(attrs[i].name, attrs[i].value);
+                }
+                var scriptsToRun = [];
+                var walk = function(parent) {
+                    var nodes = parent.childNodes;
+                    for (var j = 0; j < nodes.length; j++) {
+                        if (nodes[j].tagName === 'SCRIPT') scriptsToRun.push(nodes[j]);
+                        if (nodes[j].childNodes && nodes[j].childNodes.length) walk(nodes[j]);
+                    }
+                };
+                walk(newBody);
+                document.body.innerHTML = newBody.innerHTML;
+                scriptsToRun.forEach(function(oldScript) {
+                    var s = document.createElement('script');
+                    if (oldScript.src) s.src = oldScript.src; else s.textContent = oldScript.textContent;
+                    document.body.appendChild(s);
+                });
+                if (pushState) history.pushState({ soft: true }, '', url);
+            })
+            .catch(function() { location.href = url; });
+    }
+    document.addEventListener('click', function(e) {
+        var link = getLink(e.target);
+        if (!isSoftNavLink(link)) return;
+        if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+        e.preventDefault();
+        e.stopPropagation();
+        if (link.href === location.href) return;
+        loadPage(link.href, true);
+    }, true);
+    window.addEventListener('popstate', function() {
+        loadPage(location.href, false);
     });
 })();
 </script>

@@ -3,6 +3,7 @@
     var typingInput = document.getElementById('typingInput');
     var timerEl = document.getElementById('timer');
     var wpmEl = document.getElementById('wpm');
+    var cpmEl = document.getElementById('cpm');
     var accuracyEl = document.getElementById('accuracy');
     var btnRestart = document.getElementById('btnRestart');
     var resultInline = document.getElementById('resultInline');
@@ -14,41 +15,74 @@
 
     var words = [];
 
+    /* Раскладка как на картинке: ряд 1 — цифры + Backspace; 2 — Tab + буквы + \; 3 — Caps + буквы + Enter; 4 — Shift + буквы + Shift; 5 — Copy, Clear, En, Пробел, Ru, Layout, Spell */
     var KEYBOARD_ROWS = [
-        ['Backquote', 'Digit1', 'Digit2', 'Digit3', 'Digit4', 'Digit5', 'Digit6', 'Digit7', 'Digit8', 'Digit9', 'Digit0', 'Minus', 'Equal'],
-        ['KeyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT', 'KeyY', 'KeyU', 'KeyI', 'KeyO', 'KeyP', 'BracketLeft', 'BracketRight'],
-        ['KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyK', 'KeyL', 'Semicolon', 'Quote'],
-        ['KeyZ', 'KeyX', 'KeyC', 'KeyV', 'KeyB', 'KeyN', 'KeyM', 'Comma', 'Period', 'Slash'],
-        ['Space']
+        ['Backquote', 'Digit1', 'Digit2', 'Digit3', 'Digit4', 'Digit5', 'Digit6', 'Digit7', 'Digit8', 'Digit9', 'Digit0', 'Minus', 'Equal', 'Backspace'],
+        ['Tab', 'KeyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT', 'KeyY', 'KeyU', 'KeyI', 'KeyO', 'KeyP', 'BracketLeft', 'BracketRight', 'Backslash'],
+        ['CapsLock', 'KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyK', 'KeyL', 'Semicolon', 'Quote', 'Enter'],
+        ['ShiftLeft', 'KeyZ', 'KeyX', 'KeyC', 'KeyV', 'KeyB', 'KeyN', 'KeyM', 'Comma', 'Period', 'Slash', 'ShiftRight'],
+        ['Copy', 'Clear', 'En', 'Space', 'Ru', 'Layout', 'Spell']
     ];
     var LAYOUT_EN = {
         Backquote: '`', Digit1: '1', Digit2: '2', Digit3: '3', Digit4: '4', Digit5: '5', Digit6: '6', Digit7: '7', Digit8: '8', Digit9: '9', Digit0: '0', Minus: '-', Equal: '=',
-        KeyQ: 'q', KeyW: 'w', KeyE: 'e', KeyR: 'r', KeyT: 't', KeyY: 'y', KeyU: 'u', KeyI: 'i', KeyO: 'o', KeyP: 'p', BracketLeft: '[', BracketRight: ']',
+        KeyQ: 'q', KeyW: 'w', KeyE: 'e', KeyR: 'r', KeyT: 't', KeyY: 'y', KeyU: 'u', KeyI: 'i', KeyO: 'o', KeyP: 'p', BracketLeft: '[', BracketRight: ']', Backslash: '\\',
         KeyA: 'a', KeyS: 's', KeyD: 'd', KeyF: 'f', KeyG: 'g', KeyH: 'h', KeyJ: 'j', KeyK: 'k', KeyL: 'l', Semicolon: ';', Quote: "'",
         KeyZ: 'z', KeyX: 'x', KeyC: 'c', KeyV: 'v', KeyB: 'b', KeyN: 'n', KeyM: 'm', Comma: ',', Period: '.', Slash: '/',
         Space: ' '
     };
     var LAYOUT_RU = {
         Backquote: 'ё', Digit1: '1', Digit2: '2', Digit3: '3', Digit4: '4', Digit5: '5', Digit6: '6', Digit7: '7', Digit8: '8', Digit9: '9', Digit0: '0', Minus: '-', Equal: '=',
-        KeyQ: 'й', KeyW: 'ц', KeyE: 'у', KeyR: 'к', KeyT: 'е', KeyY: 'н', KeyU: 'г', KeyI: 'ш', KeyO: 'щ', KeyP: 'з', BracketLeft: 'х', BracketRight: 'ъ',
+        KeyQ: 'й', KeyW: 'ц', KeyE: 'у', KeyR: 'к', KeyT: 'е', KeyY: 'н', KeyU: 'г', KeyI: 'ш', KeyO: 'щ', KeyP: 'з', BracketLeft: 'х', BracketRight: 'ъ', Backslash: 'э',
         KeyA: 'ф', KeyS: 'ы', KeyD: 'в', KeyF: 'а', KeyG: 'п', KeyH: 'р', KeyJ: 'о', KeyK: 'л', KeyL: 'д', Semicolon: 'ж', Quote: 'э',
         KeyZ: 'я', KeyX: 'ч', KeyC: 'с', KeyV: 'м', KeyB: 'и', KeyN: 'т', KeyM: 'ь', Comma: 'б', Period: 'ю', Slash: '.',
         Space: ' '
+    };
+    var KEY_LABELS = {
+        Backspace: { en: 'Backspace', ru: 'Backspace' },
+        Tab: { en: 'Tab', ru: 'Tab' },
+        CapsLock: { en: 'Caps Lock', ru: 'Caps Lock' },
+        Enter: { en: 'Enter', ru: 'Enter' },
+        ShiftLeft: { en: 'Shift', ru: 'Shift' },
+        ShiftRight: { en: 'Shift', ru: 'Shift' },
+        Copy: { en: 'Copy', ru: 'Copy' },
+        Clear: { en: 'Clear', ru: 'Clear' },
+        En: { en: 'En', ru: 'En' },
+        Ru: { en: 'Ru', ru: 'Ru' },
+        Layout: { en: 'Layout', ru: 'Layout' },
+        Spell: { en: 'Spell', ru: 'Spell' }
     };
 
     function buildVisualKeyboard() {
         if (!visualKeyboard) return;
         var lang = getLang();
         var layout = lang === 'en' ? LAYOUT_EN : LAYOUT_RU;
+        var layoutOther = lang === 'en' ? LAYOUT_RU : LAYOUT_EN;
         visualKeyboard.innerHTML = '';
+        var wideClasses = { Backspace: 'key-backspace', Tab: 'key-tab', CapsLock: 'key-caps', Enter: 'key-enter', ShiftLeft: 'key-shift', ShiftRight: 'key-shift', Space: 'key-space' };
+        var decoCodes = ['Copy', 'Clear', 'En', 'Ru', 'Layout', 'Spell'];
         KEYBOARD_ROWS.forEach(function (rowCodes) {
             var row = document.createElement('div');
             row.className = 'keyboard-row';
             rowCodes.forEach(function (code) {
                 var key = document.createElement('span');
-                key.className = 'key' + (code === 'Space' ? ' key-space' : '');
+                key.className = 'key' + (wideClasses[code] ? ' ' + wideClasses[code] : '') + (decoCodes.indexOf(code) !== -1 ? ' key-deco' : '');
                 key.setAttribute('data-code', code);
-                key.textContent = code === 'Space' ? (lang === 'en' ? 'Space' : 'Пробел') : (layout[code] || code);
+                var primary, secondary, single;
+                if (code === 'Space') {
+                    single = lang === 'en' ? 'Space' : 'Пробел';
+                } else if (KEY_LABELS[code]) {
+                    single = KEY_LABELS[code][lang] || KEY_LABELS[code].en;
+                } else if (layout[code] !== undefined) {
+                    primary = layout[code];
+                    secondary = layoutOther[code];
+                } else {
+                    single = code;
+                }
+                if (single !== undefined) {
+                    key.textContent = single;
+                } else {
+                    key.innerHTML = '<span class="key-primary">' + escapeHtml(primary) + '</span>' + (secondary ? '<span class="key-secondary">' + escapeHtml(secondary) + '</span>' : '');
+                }
                 row.appendChild(key);
             });
             visualKeyboard.appendChild(row);
@@ -78,21 +112,35 @@
     }
 
     function getWordCount() {
+        var customWrap = document.getElementById('wordCountCustomWrap');
+        var customInput = document.getElementById('wordCountCustom');
         var btn = document.querySelector('.word-count-btn.active');
-        return btn ? parseInt(btn.getAttribute('data-count'), 10) : 25;
+        if (btn && btn.getAttribute('data-count') === 'custom' && customInput) {
+            var val = parseInt(customInput.value, 10);
+            if (!isNaN(val) && val >= 1) return Math.min(10000, val);
+            return 1;
+        }
+        if (customWrap && customInput && customWrap.style.display === 'inline-block') {
+            var v = parseInt(customInput.value, 10);
+            if (!isNaN(v) && v >= 1) return Math.min(10000, v);
+        }
+        if (!btn) return 25;
+        return parseInt(btn.getAttribute('data-count'), 10) || 25;
     }
 
     function getLang() {
         return (typeof window.TIPTOP_LANG !== 'undefined' ? window.TIPTOP_LANG : (document.body && document.body.getAttribute('data-lang'))) || 'ru';
     }
 
-    function renderWords(done) {
+    function renderWords(done, countOverride) {
         var lang = getLang();
         var loadingText = lang === 'en' ? 'Loading words…' : 'Загрузка слов…';
         var errorHint = lang === 'en' ? 'Try «Syllables» or refresh the page.' : 'Попробуйте «Слоги» или обновите страницу.';
         typingWords.innerHTML = '<span class="loading-words">' + loadingText + '</span>';
         typingInput.disabled = true;
-        var count = getWordCount();
+        var count = countOverride !== undefined && countOverride !== null
+            ? Math.max(1, Math.min(10000, parseInt(countOverride, 10) || 1))
+            : getWordCount();
         var generator = getGenerator();
         fetch('/api/words?count=' + count + '&generator=' + encodeURIComponent(generator) + '&lang=' + encodeURIComponent(lang))
             .then(function (r) { return r.json(); })
@@ -119,11 +167,13 @@
                 totalTypedChars = 0;
                 totalCorrectChars = 0;
                 highlightWords();
+                if (typeof window.applyTipTypFont === 'function') window.applyTipTypFont();
                 if (typeof done === 'function') done();
             })
             .catch(function (err) {
                 typingWords.innerHTML = '<span class="loading-words">' + (getLang() === 'en' ? 'Load error. Try «Syllables» or refresh.' : 'Ошибка загрузки. Попробуйте «Слоги» или обновите страницу.') + '</span>';
                 typingInput.disabled = false;
+                if (typeof window.applyTipTypFont === 'function') window.applyTipTypFont();
                 if (typeof done === 'function') done();
             });
     }
@@ -155,6 +205,8 @@
         var wordCount = countCompletedWords();
         var wpm = elapsedMin > 0 ? Math.round(wordCount / elapsedMin) : 0;
         wpmEl.textContent = wpm;
+        var cpm = elapsedMin > 0 ? Math.round(totalCorrectChars / elapsedMin) : 0;
+        if (cpmEl) cpmEl.textContent = cpm;
     }
 
     function getCompletedCountFromText(text) {
@@ -234,6 +286,27 @@
                 span.textContent = word;
             }
         });
+        var currentWordEl = typingWords.querySelector('.word.current');
+        if (currentWordEl) {
+            var wrap = typingWords.parentElement;
+            if (wrap && wrap.classList.contains('typing-words-wrap')) {
+                requestAnimationFrame(function () {
+                    var wordRect = currentWordEl.getBoundingClientRect();
+                    var wrapRect = wrap.getBoundingClientRect();
+                    var wordHeight = wordRect.height;
+                    var wrapHeight = wrap.clientHeight;
+                    var wrapScrollHeight = wrap.scrollHeight;
+                    var wordCenter = wordRect.top + wordHeight / 2;
+                    var wrapCenter = wrapRect.top + wrapHeight / 2;
+                    var delta = wordCenter - wrapCenter;
+                    var targetScroll = wrap.scrollTop + delta;
+                    targetScroll = Math.max(0, Math.min(targetScroll, wrapScrollHeight - wrapHeight));
+                    wrap.scrollTop = targetScroll;
+                });
+            } else {
+                currentWordEl.scrollIntoView({ block: 'center', behavior: 'smooth' });
+            }
+        }
     }
 
     function stopTest() {
@@ -242,6 +315,8 @@
             timerInterval = null;
         }
         typingInput.disabled = true;
+        updateWPM();
+        updateAccuracy();
         showResult();
     }
 
@@ -291,14 +366,16 @@
     function showResult() {
         var timeSec = Math.floor((Date.now() - startTime) / 1000);
         var wordCount = countCompletedWords();
-        var elapsedMin = timeSec / 60;
-        var wpm = elapsedMin > 0 ? Math.round(wordCount / elapsedMin) : 0;
+        var effectiveSec = timeSec < 1 ? 1 : timeSec;
+        var elapsedMin = effectiveSec / 60;
+        var wpm = Math.round(wordCount / elapsedMin);
+        var cpm = Math.round(totalCorrectChars / elapsedMin);
         var acc = totalTypedChars ? Math.round((totalCorrectChars / totalTypedChars) * 100) : 0;
-
+        var timeLabel = timeSec < 1 ? (getLang() === 'en' ? '< 1 sec' : '< 1 сек') : (timeSec + (getLang() === 'en' ? ' sec' : ' сек'));
         var isEn = getLang() === 'en';
         resultStats.innerHTML = isEn
-            ? ('<p><strong>Words per minute:</strong> ' + wpm + '</p><p><strong>Accuracy:</strong> ' + acc + '%</p><p><strong>Time:</strong> ' + timeSec + ' sec</p><p><strong>Words typed:</strong> ' + wordCount + '</p>')
-            : ('<p><strong>Слов в минуту:</strong> ' + wpm + '</p><p><strong>Точность:</strong> ' + acc + '%</p><p><strong>Время:</strong> ' + timeSec + ' сек</p><p><strong>Слов набрано:</strong> ' + wordCount + '</p>');
+            ? ('<p><strong>Words per minute:</strong> ' + wpm + '</p><p><strong>Characters per minute:</strong> ' + cpm + '</p><p><strong>Accuracy:</strong> ' + acc + '%</p><p><strong>Time:</strong> ' + timeLabel + '</p><p><strong>Words typed:</strong> ' + wordCount + '</p>')
+            : ('<p><strong>Слов в минуту:</strong> ' + wpm + '</p><p><strong>Знаков в минуту:</strong> ' + cpm + '</p><p><strong>Точность:</strong> ' + acc + '%</p><p><strong>Время:</strong> ' + timeLabel + '</p><p><strong>Слов набрано:</strong> ' + wordCount + '</p>');
 
         if (resultReport) resultReport.innerHTML = buildTypingReport();
         resultSave.textContent = '';
@@ -344,6 +421,7 @@
         typingInput.value = '';
         timerEl.textContent = '0:00';
         wpmEl.textContent = '0';
+        if (cpmEl) cpmEl.textContent = '0';
         accuracyEl.textContent = '—';
         renderWords(function () {
             typingInput.focus();
@@ -413,19 +491,95 @@
         highlightKey(e.code, false);
     });
 
+    function applyNewSettingsAndReloadWords(countOverride) {
+        if (resultInline) resultInline.hidden = true;
+        if (timerInterval) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+        }
+        startTime = null;
+        totalTypedChars = 0;
+        totalCorrectChars = 0;
+        prevInputValue = '';
+        timerEl.textContent = '0:00';
+        wpmEl.textContent = '0';
+        if (cpmEl) cpmEl.textContent = '0';
+        accuracyEl.textContent = '—';
+        renderWords(function () { typingInput.focus(); }, countOverride);
+    }
+
     document.querySelectorAll('.word-count-btn').forEach(function (btn) {
         btn.addEventListener('click', function () {
             document.querySelectorAll('.word-count-btn').forEach(function (b) { b.classList.remove('active'); });
             btn.classList.add('active');
-            if (!startTime) {
-                if (resultInline) resultInline.hidden = true;
-                timerEl.textContent = '0:00';
-                wpmEl.textContent = '0';
-                accuracyEl.textContent = '—';
-                renderWords(function () { typingInput.focus(); });
+            var wrap = document.getElementById('wordCountCustomWrap');
+            if (wrap) wrap.style.display = btn.getAttribute('data-count') === 'custom' ? 'inline-block' : 'none';
+            if (btn.getAttribute('data-count') === 'custom') {
+                var customInput = document.getElementById('wordCountCustom');
+                if (customInput) {
+                    var v = Math.max(1, Math.min(10000, parseInt(customInput.value, 10) || 50));
+                    customInput.value = v;
+                    customInput.focus();
+                    applyNewSettingsAndReloadWords(v);
+                    return;
+                }
             }
+            applyNewSettingsAndReloadWords();
         });
     });
+
+    var wordCountCustomEl = document.getElementById('wordCountCustom');
+    if (wordCountCustomEl) {
+        wordCountCustomEl.addEventListener('focus', function () {
+            var customBtn = document.querySelector('.word-count-btn[data-count="custom"]');
+            if (customBtn && !customBtn.classList.contains('active')) {
+                document.querySelectorAll('.word-count-btn').forEach(function (b) { b.classList.remove('active'); });
+                customBtn.classList.add('active');
+                var wrap = document.getElementById('wordCountCustomWrap');
+                if (wrap) wrap.style.display = 'inline-block';
+            }
+        });
+        wordCountCustomEl.addEventListener('input', function () {
+            var raw = this.value.replace(/\D/g, '');
+            if (raw.length > 5) this.value = raw.slice(0, 5);
+            else if (raw !== this.value) this.value = raw;
+        });
+        wordCountCustomEl.addEventListener('change', function () {
+            var val = parseInt(this.value, 10);
+            if (!isNaN(val)) {
+                val = Math.max(1, Math.min(10000, val));
+                this.value = val;
+            } else {
+                val = 1;
+                this.value = val;
+            }
+            var customBtn = document.querySelector('.word-count-btn[data-count="custom"]');
+            if (customBtn) {
+                document.querySelectorAll('.word-count-btn').forEach(function (b) { b.classList.remove('active'); });
+                customBtn.classList.add('active');
+            }
+            var wrap = document.getElementById('wordCountCustomWrap');
+            if (wrap) wrap.style.display = 'inline-block';
+            applyNewSettingsAndReloadWords(val);
+        });
+        wordCountCustomEl.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                var val = parseInt(this.value, 10);
+                val = isNaN(val) || val < 1 ? 1 : Math.min(10000, val);
+                this.value = val;
+                this.blur();
+                applyNewSettingsAndReloadWords(val);
+            }
+        });
+    }
+
+    var wordGeneratorEl = document.getElementById('wordGenerator');
+    if (wordGeneratorEl) {
+        wordGeneratorEl.addEventListener('change', function () {
+            applyNewSettingsAndReloadWords();
+        });
+    }
 
     if (btnRestart) btnRestart.addEventListener('click', resetTest);
 

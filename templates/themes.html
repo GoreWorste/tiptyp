@@ -3,7 +3,21 @@
 {% block content %}
 <div class="themes-page">
     <h1>{% if lang == 'en' %}Themes{% else %}Темы{% endif %}</h1>
-    <p class="themes-intro">{% if lang == 'en' %}Choose a theme. It will be saved and applied across the site.{% else %}Выберите тему — она сохранится и будет действовать на всём сайте.{% endif %}</p>
+    <p class="themes-intro">{% if lang == 'en' %}Choose a theme and font. They will be saved and applied across the site.{% else %}Выберите тему и шрифт — они сохранятся и будут действовать на всём сайте.{% endif %}</p>
+
+    <section class="themes-section font-section">
+        <h2>{% if lang == 'en' %}Font{% else %}Шрифт{% endif %}</h2>
+        <p class="font-section-hint">{% if lang == 'en' %}Choose from 600+ Google Fonts. Search by name.{% else %}Выберите один из 600+ шрифтов Google. Поиск по названию.{% endif %}</p>
+        <div class="font-picker-wrap">
+            <input type="text" id="fontSearch" class="font-search" placeholder="{% if lang == 'en' %}Search font…{% else %}Поиск шрифта…{% endif %}" autocomplete="off" aria-label="{% if lang == 'en' %}Search font{% else %}Поиск шрифта{% endif %}">
+            <div class="font-dropdown" id="fontDropdown" hidden></div>
+        </div>
+        <div class="font-current-wrap">
+            <label>{% if lang == 'en' %}Current:{% else %}Сейчас:{% endif %}</label>
+            <span class="font-current" id="fontCurrent">—</span>
+            <button type="button" class="font-reset" id="fontReset">{% if lang == 'en' %}Default{% else %}По умолчанию{% endif %}</button>
+        </div>
+    </section>
 
     <section class="themes-section">
         <h2>{% if lang == 'en' %}Dark (50){% else %}Тёмные (50){% endif %}</h2>
@@ -32,6 +46,7 @@
 <script>
 (function() {
     var STORAGE_KEY = 'tiptyp_theme';
+    var FONT_KEY = 'tiptyp_font';
     function setTheme(id) {
         document.body.dataset.theme = id;
         try { localStorage.setItem(STORAGE_KEY, id); } catch (e) {}
@@ -48,6 +63,65 @@
             setTheme(this.getAttribute('data-theme'));
         });
     });
+
+    // Font picker — только сохраняет выбор в localStorage; шрифт применяется только в окошке набора на странице теста
+    function getStoredFont() {
+        try { return localStorage.getItem(FONT_KEY) || ''; } catch (e) { return ''; }
+    }
+    function setFont(fontName) {
+        if (!fontName) {
+            try { localStorage.removeItem(FONT_KEY); } catch (e) {}
+            var cur = document.getElementById('fontCurrent');
+            if (cur) cur.textContent = '—';
+            return;
+        }
+        try { localStorage.setItem(FONT_KEY, fontName); } catch (e) {}
+        var cur = document.getElementById('fontCurrent');
+        if (cur) cur.textContent = fontName;
+    }
+    var fontList = [];
+    var searchEl = document.getElementById('fontSearch');
+    var dropEl = document.getElementById('fontDropdown');
+    var currentEl = document.getElementById('fontCurrent');
+    var resetBtn = document.getElementById('fontReset');
+    if (resetBtn) resetBtn.addEventListener('click', function() { setFont(''); });
+    var storedFont = getStoredFont();
+    if (currentEl) currentEl.textContent = storedFont || '—';
+
+    fetch("{{ url_for('static', filename='fonts-list.json') }}")
+        .then(function(r) { return r.json(); })
+        .then(function(arr) {
+            fontList = arr;
+            if (searchEl) {
+                searchEl.addEventListener('focus', function() {
+                    searchEl.dispatchEvent(new Event('input'));
+                    dropEl.hidden = false;
+                });
+                searchEl.addEventListener('input', function() {
+                    var q = (searchEl.value || '').trim().toLowerCase();
+                    var list = q ? fontList.filter(function(f) { return f.toLowerCase().indexOf(q) >= 0; }) : fontList;
+                    var show = list.slice(0, 80);
+                    dropEl.innerHTML = '';
+                    dropEl.hidden = show.length === 0 && !q;
+                    show.forEach(function(name) {
+                        var div = document.createElement('div');
+                        div.className = 'font-option';
+                        div.textContent = name;
+                        div.addEventListener('click', function() {
+                            setFont(name);
+                            searchEl.value = '';
+                            dropEl.hidden = true;
+                            dropEl.innerHTML = '';
+                        });
+                        dropEl.appendChild(div);
+                    });
+                });
+                searchEl.addEventListener('blur', function() {
+                    setTimeout(function() { dropEl.hidden = true; }, 200);
+                });
+            }
+        })
+        .catch(function() {});
 })();
 </script>
 {% endblock %}

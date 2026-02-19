@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block title %}{% if lang == 'en' %}Profile — TipTyp{% else %}Профиль — TipTyp{% endif %}{% endblock %}
+{% block content %}
+<div class="profile-page">
+    <aside class="profile-sidebar">
+        <div class="profile-avatar-wrap">
+            {% if current_user.avatar %}
+            <img src="{{ url_for('avatar_file', filename=current_user.avatar) }}" alt="" class="profile-avatar" width="120" height="120">
+            {% else %}
+            <div class="profile-avatar profile-avatar-placeholder" aria-hidden="true">{{ (current_user.display or current_user.username)[0]|upper }}</div>
+            {% endif %}
+        </div>
+        <h1 class="profile-name">{{ current_user.display }}</h1>
+        <p class="profile-username">@{{ current_user.username }}</p>
+        <a href="{{ url_for('logout', lang=lang) }}" class="btn btn-secondary profile-logout">{% if lang == 'en' %}Log out{% else %}Выйти{% endif %}</a>
+    </aside>
+
+    <div class="profile-content">
+        <nav class="profile-tabs" role="tablist">
+            <button type="button" class="profile-tab active" data-tab="main" role="tab">{% if lang == 'en' %}Overview{% else %}Главное{% endif %}</button>
+            <button type="button" class="profile-tab" data-tab="stats" role="tab">{% if lang == 'en' %}Statistics{% else %}Статистика{% endif %}</button>
+            <button type="button" class="profile-tab" data-tab="themes" role="tab">{% if lang == 'en' %}Themes{% else %}Темы{% endif %}</button>
+            <button type="button" class="profile-tab" data-tab="fonts" role="tab">{% if lang == 'en' %}Fonts{% else %}Шрифты{% endif %}</button>
+        </nav>
+
+        <section class="profile-panel active" id="panel-main" role="tabpanel">
+            <h2>{% if lang == 'en' %}Profile settings{% else %}Настройки профиля{% endif %}</h2>
+            <form method="post" action="{{ url_for('profile', lang=lang) }}" enctype="multipart/form-data" class="profile-form">
+                <div class="profile-form-group">
+                    <label for="avatar">{% if lang == 'en' %}Avatar{% else %}Аватар{% endif %}</label>
+                    <input type="file" id="avatar" name="avatar" accept="image/png,image/jpeg,image/gif,image/webp" class="profile-file">
+                    <span class="profile-hint">{% if lang == 'en' %}PNG, JPG, GIF, WebP. Max 2 MB.{% else %}PNG, JPG, GIF, WebP. Не более 2 МБ.{% endif %}</span>
+                </div>
+                <div class="profile-form-group">
+                    <label for="display_name">{% if lang == 'en' %}Display name (nickname){% else %}Никнейм{% endif %}</label>
+                    <input type="text" id="display_name" name="display_name" value="{{ current_user.display_name or '' }}" maxlength="80" class="profile-input" placeholder="{{ current_user.username }}">
+                </div>
+                <button type="submit" class="btn btn-primary">{% if lang == 'en' %}Save{% else %}Сохранить{% endif %}</button>
+            </form>
+            <p class="profile-go-test">
+                <a href="{{ url_for('index', lang=lang) }}" class="btn btn-secondary">{% if lang == 'en' %}Go to test{% else %}Перейти к тесту{% endif %}</a>
+            </p>
+        </section>
+
+        <section class="profile-panel" id="panel-stats" role="tabpanel" hidden>
+            <h2>{% if lang == 'en' %}My statistics{% else %}Моя статистика{% endif %}</h2>
+            <div class="stats-summary profile-stats-summary" id="profileStatsSummary">
+                <p>{% if lang == 'en' %}Loading…{% else %}Загрузка…{% endif %}</p>
+            </div>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="profileStatsTable">
+                    <thead>
+                        <tr>
+                            <th>{% if lang == 'en' %}Date{% else %}Дата{% endif %}</th>
+                            <th>{% if lang == 'en' %}WPM{% else %}Слов/мин{% endif %}</th>
+                            <th>{% if lang == 'en' %}Accuracy %{% else %}Точность %{% endif %}</th>
+                            <th>{% if lang == 'en' %}Time{% else %}Время{% endif %}</th>
+                        </tr>
+                    </thead>
+                    <tbody id="profileStatsBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="profile-panel" id="panel-themes" role="tabpanel" hidden>
+            <h2>{% if lang == 'en' %}Themes{% else %}Темы{% endif %}</h2>
+            <p class="profile-panel-hint">{% if lang == 'en' %}Choose a theme. It will be saved and applied across the site.{% else %}Выберите тему — она сохранится на всём сайте.{% endif %}</p>
+            <div class="themes-section">
+                <h3>{% if lang == 'en' %}Dark (50){% else %}Тёмные (50){% endif %}</h3>
+                <div class="themes-grid profile-themes-grid" id="profileThemesDark">
+                    {% for n in range(1, 51) %}
+                    <button type="button" class="theme-card" data-theme="dark{{ n }}" title="Dark {{ n }}">
+                        <span class="theme-card-preview theme-card-preview-dark"></span>
+                        <span class="theme-card-label">{{ n }}</span>
+                    </button>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="themes-section">
+                <h3>{% if lang == 'en' %}Light (50){% else %}Светлые (50){% endif %}</h3>
+                <div class="themes-grid profile-themes-grid" id="profileThemesLight">
+                    {% for n in range(1, 51) %}
+                    <button type="button" class="theme-card" data-theme="light{{ n }}" title="Light {{ n }}">
+                        <span class="theme-card-preview theme-card-preview-light"></span>
+                        <span class="theme-card-label">{{ n }}</span>
+                    </button>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-panel" id="panel-fonts" role="tabpanel" hidden>
+            <h2>{% if lang == 'en' %}Fonts{% else %}Шрифты{% endif %}</h2>
+            <p class="profile-panel-hint">{% if lang == 'en' %}Choose from 600+ Google Fonts. Search by name.{% else %}Выберите один из 600+ шрифтов Google. Поиск по названию.{% endif %}</p>
+            <div class="font-picker-wrap">
+                <input type="text" id="profileFontSearch" class="font-search" placeholder="{% if lang == 'en' %}Search font…{% else %}Поиск шрифта…{% endif %}" autocomplete="off">
+                <div class="font-dropdown" id="profileFontDropdown" hidden></div>
+            </div>
+            <div class="font-current-wrap">
+                <label>{% if lang == 'en' %}Current:{% else %}Сейчас:{% endif %}</label>
+                <span class="font-current" id="profileFontCurrent">—</span>
+                <button type="button" class="font-reset" id="profileFontReset">{% if lang == 'en' %}Default{% else %}По умолчанию{% endif %}</button>
+            </div>
+        </section>
+    </div>
+</div>
+<script>window.TIPTOP_LANG = "{{ lang }}";</script>
+<script src="{{ url_for('static', filename='profile.js') }}"></script>
+{% endblock %}
